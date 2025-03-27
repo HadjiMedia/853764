@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - Johannah Ticketing Agency</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Book Your Ticket</h1>
+        <p>This is only a request.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="promo.html">Promos</a>
+        <a href="contact.html">Contact</a>
+        <a href="booknow.html" class="btn-book">Request a Book</a>
+    </nav>
+
+    <div class="container">
+        <h2>Flight Booking Form</h2>
+        <form id="bookingForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="source">From:</label>
+            <input type="text" name="source" id="source" placeholder="Enter departure location" required>
+
+            <label for="destination">To:</label>
+            <input type="text" name="destination" id="destination" placeholder="Enter destination" required>
+
+            <label for="date">Departure Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="returnDate">Return Date: (Optional)</label>
+            <input type="date" id="returnDate" name="returnDate">
+
+            <button type="button" onclick="sendMessage()">Send Inquiry on Messenger</button>
+
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Johannah Ticketing Agency. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function goHome() {
+            window.location.href = "index.html";
+        }
+
+        function sendMessage() {
+            // Get form values
+            const name = encodeURIComponent(document.getElementById("name").value);
+            const email = encodeURIComponent(document.getElementById("email").value);
+            const from = encodeURIComponent(document.getElementById("source").value);
+            const to = encodeURIComponent(document.getElementById("destination").value);
+            const date = encodeURIComponent(document.getElementById("date").value);
+            const returnDate = encodeURIComponent(document.getElementById("returnDate").value);
+
+            // Prepare the message for Messenger
+            let message = `Hello! I want to inquire about this booking:\n\n`;
+            message += `Name: ${decodeURIComponent(name)}\n`;
+            message += `Email: ${decodeURIComponent(email)}\n`;
+            message += `From: ${decodeURIComponent(from)}\n`;
+            message += `To: ${decodeURIComponent(to)}\n`;
+            message += `Date: ${decodeURIComponent(date)}\n`;
+            
+            if (returnDate) {
+                message += `Return Date: ${decodeURIComponent(returnDate)}\n`;
+            }
+
+            // Encode the message for Messenger URL
+            const encodedMessage = encodeURIComponent(message);
+
+            // Messenger link (replace 'johannahticketing' with your page username)
+            const messengerUrl = `https://m.me/johanahticketing?text=${encodedMessage}`;
+
+            // Open Messenger
+            window.open(messengerUrl, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>
