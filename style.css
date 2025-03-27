@@ -91,14 +91,15 @@ nav ul li a {
 /* Responsive design */
 @media (max-width: 768px) {
     .hero {
-        height: auto; /* Adjust height dynamically */
-        min-height: 100vh; /* Ensure it fills the screen */
-        background-size: cover; /* Keeps full image */
-        background-position: center center; /* Centers the image */
+        min-height: 100vh; /* Ensures full screen height */
+        background-size: contain; /* Ensures the entire image is visible */
+        background-position: center top; /* Keeps focus on the upper part */
+        background-repeat: no-repeat;
     }
 
     .hero-content {
-        padding: 20px; /* Adds space around text */
+        padding: 20px;
+        width: 90%;
     }
 }
 
