@@ -56,13 +56,15 @@ nav ul li a {
 
 /* Hero section styles */
 .hero {
-    height: 100vh;
-    background: url('images/bg.jpg') no-repeat center center/cover;
+    min-height: 100vh; /* Ensures full viewport height */
+    background: url('images/bg.jpg') no-repeat center center;
+    background-size: cover; /* Keeps the full image while covering the section */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 
 .hero-content {
