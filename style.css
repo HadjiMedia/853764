@@ -56,13 +56,14 @@ nav ul li a {
 
 /* Hero section styles */
 .hero {
-    height: 100vh;
+    min-height: 100vh; /* Ensures full viewport height */
     background: url('images/bg.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
+    width: 100%; /* Ensures full width */
 }
 .hero-content {
     color: #fff;
