@@ -90,19 +90,15 @@ nav ul li a {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center;
+    .hero {
+        height: auto; /* Adjust height dynamically */
+        min-height: 100vh; /* Ensure it fills the screen */
+        background-size: cover; /* Keeps full image */
+        background-position: center center; /* Centers the image */
     }
-    nav ul {
-        flex-direction: column;
-        padding: 0;
-    }
-    nav ul li {
-        margin: 10px 0; /* Add spacing for each menu item */
-    }
-    .book-btn {
-        margin-top: 10px;
+
+    .hero-content {
+        padding: 20px; /* Adds space around text */
     }
 }
 
