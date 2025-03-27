@@ -56,14 +56,10 @@ nav ul li a {
 
 /* Hero section styles */
 .hero {
-    min-height: 100vh; /* Ensures full viewport height */
+    height: 100vh;
     background: url('images/bg.jpg') no-repeat center center;
-    background-size: cover; /* Keeps the full image while covering the section */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
+    background-size: contain; /* Ensures the entire image is visible */
+    background-attachment: fixed; /* Makes it stay in place */
     width: 100%;
 }
 
