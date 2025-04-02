@@ -1,4 +1,4 @@
-﻿/* Reset and general styles */
+/* Reset and general styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,9 +8,7 @@ body {
     font-family: Arial, sans-serif;
     background: #f7f7f7;
     color: #333;
-    margin: 0; /* Ensure no extra spacing */
-    padding: 0; /* Remove unnecessary padding */
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    padding: 20px;
 }
 
 
@@ -24,16 +22,12 @@ header {
 }
 nav {
     display: flex;
-    justify-content: space-between; /* Align items properly */
+    justify-content: space-between;
     align-items: center;
-    background: #fff;
-    padding: 10px 50px; /* Add padding for spacing */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 nav ul {
-    display: flex;
     list-style: none;
-    padding: 0;
+    display: flex;
 }
 nav ul li {
     margin: 0 15px;
@@ -44,6 +38,10 @@ nav ul li a {
     font-size: 14px;
     font-weight: bold;
 }
+nav ul li a.active {
+    color: #ff69b4;
+}
+
 .book-btn {
     background: #ff69b4;
     color: #fff;
@@ -57,12 +55,13 @@ nav ul li a {
 /* Hero section styles */
 .hero {
     height: 100vh;
-    background: url('images/bg.jpg') no-repeat center center;
-    background-size: contain; /* Ensures the entire image is visible */
-    background-attachment: fixed; /* Makes it stay in place */
-    width: 100%;
+    background: url('images/bg.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
 }
-
 .hero-content {
     color: #fff;
     max-width: 600px;
@@ -90,16 +89,15 @@ nav ul li a {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .hero {
-        min-height: 100vh; /* Keeps full-screen height */
-        background-size: auto 100%; /* Maintains image width while filling height */
-        background-position: center; /* Centers the image */
-        background-repeat: no-repeat;
+    nav {
+        flex-direction: column;
     }
-
-    .hero-content {
-        padding: 20px;
-        width: 90%;
+    nav ul {
+        margin-top: 10px;
+    }
+    .hero {
+        height: auto;
+        padding: 50px 20px;
     }
 }
 
